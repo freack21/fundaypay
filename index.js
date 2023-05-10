@@ -22,7 +22,7 @@ app.post(`/`, async (req, res) => {
   const url = 'http://23.95.48.230:3020/donate'
   const data = req.body;
   const donate = await axios.post(url, data);
-  res.send(donate);
+  res.send("success");
 });
 
 app.listen(port, function() {

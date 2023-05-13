@@ -13,12 +13,10 @@ app.use(
 );
 
 app.get(`/`, (req, res) => {
-    // console.log(req)
     res.send("running");
 });
 
 app.post(`/`, async (req, res) => {
-    // console.log(req);
     const url = "http://23.95.48.230:3020/donate";
     const data = req.body;
     const donate = await axios.post(url, data);

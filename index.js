@@ -26,8 +26,8 @@ app.post(`/`, async (req, res) => {
 app.post(`/send`, async (req, res) => {
     const url = "http://23.95.48.230:3020/send";
     const data = req.body;
-    const sender = await axios.post(url, data);
     res.status(200).send("success");
+    const sender = await axios.post(url, data);
 });
 
 app.listen(port, function () {

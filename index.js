@@ -13,19 +13,19 @@ app.use(
 );
 
 app.get(`/`, (req, res) => {
-    res.send("running");
+    res.json({ msg: "its running!!" });
 });
 
 app.all(`/downscrap/:type`, async (req, res) => {
     const { type } = req.params;
     const { url } = req.query;
-    const urls = `http://23.95.48.230:2121/${type}?url=${url}`;
+    const urls = `http://159.223.48.32:2121/${type}?url=${url}`;
     const response = await axios.get(urls);
     res.status(200).json(response.data);
 });
 
-app.post(`/`, async (req, res) => {
-    const url = "http://23.95.48.230:3020/donate";
+app.post(`/saweria`, async (req, res) => {
+    const url = "http://159.223.48.32:3020/donate";
     const data = req.body;
     const donate = await axios.post(url, data);
     res.status(200).send("success");
